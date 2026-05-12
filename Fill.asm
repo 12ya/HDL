@@ -18,6 +18,12 @@ M=0
 @DRAW
 0;JMP
 
+(BLACK)
+@color
+M=-1
+@DRAW
+0;JMP
+
 (DRAW)
 @SCREEN
 D=A
