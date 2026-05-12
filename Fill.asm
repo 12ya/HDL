@@ -43,6 +43,8 @@ D=M
 A=M
 M=D
 
+@addr
+M=M+1
 
 @LOOP
 0;JMP
