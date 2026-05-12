@@ -12,6 +12,17 @@
 @KBD
 D=M
 
+(WHITE)
+@color
+M=0
+@DRAW
+0;JMP
+
+(DRAW)
+@SCREEN
+D=A
+@addr
+M=D
 
 @LOOP
 0;JMP
