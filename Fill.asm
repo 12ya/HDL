@@ -7,3 +7,11 @@
     * write color from SCREEN until KBD
     * repeat
 */
+
+(LOOP)
+@KBD
+D=M
+
+
+@LOOP
+0;JMP
