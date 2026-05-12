@@ -7,3 +7,6 @@ D=M
 
 @END
 D;JEQ
+
+@LOOP
+0;JMP
