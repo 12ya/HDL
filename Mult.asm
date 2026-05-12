@@ -1,0 +1,9 @@
+@R2
+M=0
+
+(LOOP)
+@R1
+D=M
+
+@END
+D;JEQ
