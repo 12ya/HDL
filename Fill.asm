@@ -12,6 +12,12 @@
 @KBD
 D=M
 
+@WHITE
+D;JEQ
+
+@BLACK
+0;JMP
+
 (WHITE)
 @color
 M=0
