@@ -36,5 +36,13 @@ D=A
 @addr
 M=D
 
+(DRAW_LOOP)
+@color
+D=M
+@addr
+A=M
+M=D
+
+
 @LOOP
 0;JMP
