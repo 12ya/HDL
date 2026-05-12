@@ -46,5 +46,12 @@ M=D
 @addr
 M=M+1
 
+@addr
+D=M
+@KBD
+D=D-A
+@DRAW_LOOP
+D;JLT
+
 @LOOP
 0;JMP
