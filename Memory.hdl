@@ -34,5 +34,7 @@ CHIP Memory {
     And(a=load, b=isRAM, out=loadRAM)
     And(a=load, b=isScreen, out=loadScreen)
     
+    RAM16K(in=in, load=loadRAM, address=address[0..13], out=ramOut)
+    Screen(in=in, load=loadScreen, address=address[0..12], out=screenOut)
 }
 
