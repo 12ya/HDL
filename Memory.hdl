@@ -22,5 +22,13 @@ CHIP Memory {
     OUT out[16];
 
     PARTS:
-	//// Replace this comment with your code.
+    /** 13 is on -> Screen else -> Keyboard area */
+    Not(in=address[13], out=not13)
+
+    /** is 14 is on -> RAM */
+    Not(in=address[14], out=isRAM)
+
+
+    And(a=address[14], b=address[13], out=isScreen)
 }
+
