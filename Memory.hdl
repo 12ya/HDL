@@ -25,9 +25,8 @@ CHIP Memory {
     /** 13 is on -> Screen else -> Keyboard area */
     Not(in=address[13], out=not13)
 
-    /** is 14 is on -> RAM */
+    /** is 14 is off -> RAM */
     Not(in=address[14], out=isRAM)
-
 
     And(a=address[14], b=address[13], out=isScreen)
 
@@ -37,5 +36,7 @@ CHIP Memory {
     RAM16K(in=in, load=loadRAM, address=address[0..13], out=ramOut)
     Screen(in=in, load=loadScreen, address=address[0..12], out=screenOut)
     Keyboard(out=keyboardOut)
-}
 
+    Mux16(a=ramOut, b=screenOut, sel=address[14], out=ramOrScreen)
+    Mux16(a=ramOrScreen, b=keyboardOut, sel=address[13], out=out)
+}
