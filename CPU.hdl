@@ -32,6 +32,8 @@ CHIP CPU {
     Not(in=instruction[15] , out=isAInstruction );
 
     Mux16(a=instruction , b=aluOut , sel=instruction[15] , out=aIn );
+    
+    // instruction[15] - C instruction, instruction[5] - includes A
     And(a=instruction[15] , b=instruction[5] , out=cLoadsA );
     Or(a=isAInstruction , b=cLoadsA , out=loadA );
 
