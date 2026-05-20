@@ -35,6 +35,11 @@ CHIP CPU {
     And(a=instruction[15] , b=instruction[5] , out=cLoadsA );
     Or(a=isAInstruction , b=cLoadsA , out=loadA );
 
+    // ARegister stores either @value or ALU output.
+    // aOut is used as:
+    // 1. ALU y input when comp uses A
+    // 2. memory addressM when instruction uses M
+    // 3. jump target address for PC
     ARegister(in=aIn , load=loadA , out=aOut, out[0..14]=addressM );
 
     Mux16(a=aOut , b=inM , sel=instruction[12] , out=yInput );
