@@ -62,7 +62,7 @@ CHIP CPU {
     Not(in=ng , out=notNg );
 
     And(a=notZr , b=notNg , out=positive );
-    
+
     // last 3 bits are jump bits
     And(a=instruction[0] , b=positive , out=jgt );
     And(a=instruction[1] , b=zr , out=jeq );
@@ -71,6 +71,7 @@ CHIP CPU {
     Or(a=jgt , b=jeq , out=jgeOrJgt );
     Or(a=jgeOrJgt , b=jlt , out=jumpCondition );
 
+    // checking if C-command, only C commands allows jumping
     And(a=instruction[15] , b=jumpCondition , out=pcLoad );
     Not(in=pcLoad , out=pcInc );
     PC(in=aOut , load=pcLoad , inc=pcInc , reset=reset , out[0..14]=pc );
