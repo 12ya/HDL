@@ -63,6 +63,7 @@ CHIP CPU {
 
     And(a=notZr , b=notNg , out=positive );
     
+    // last 3 bits are jump bits
     And(a=instruction[0] , b=positive , out=jgt );
     And(a=instruction[1] , b=zr , out=jeq );
     And(a=instruction[2] , b=ng , out=jlt );
