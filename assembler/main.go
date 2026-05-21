@@ -83,3 +83,20 @@ func commandType(cmd string) Command {
 	}
 	return C_COMMAND
 }
+
+func symbol(cmd string) string {
+	// if A_COMMAND: remove @
+	// if L_COMMAND: remove ( and )
+
+	switch commandType(cmd) {
+	case L_COMMAND:
+		cmd = strings.TrimPrefix(cmd, "(")
+		return strings.TrimSuffix(cmd, ")")
+
+	case A_COMMAND:
+		return strings.TrimPrefix(cmd, "@")
+
+	default:
+		return ""
+	}
+}
