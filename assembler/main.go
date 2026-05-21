@@ -100,3 +100,10 @@ func symbol(cmd string) string {
 		return ""
 	}
 }
+
+func dest(cmd string) string {
+	if destination, _, found := strings.Cut(cmd, "="); found {
+		return destination
+	}
+	return ""
+}
