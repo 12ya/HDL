@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-func TestMain(t *testing.T) {
+func TestParser(t *testing.T) {
 	tests := map[string]string{
 		"D=M+1":       "M+1",
 		"D;JEQ":       "D",
