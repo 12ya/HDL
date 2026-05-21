@@ -55,3 +55,31 @@ func cleanLine(line string) string {
 	line = strings.ReplaceAll(line, " ", "")
 	return line
 }
+
+type Command int
+
+const (
+	L_COMMAND Command = iota
+	A_COMMAND
+	C_COMMAND
+)
+
+var commandMap = map[Command]string{
+	L_COMMAND: "L_COMMAND",
+	A_COMMAND: "A_COMMAND",
+	C_COMMAND: "C_COMMAND",
+}
+
+func (c Command) String() string {
+	return commandMap[c]
+}
+
+func commandType(cmd string) Command {
+	if strings.HasPrefix(cmd, "(") {
+		return L_COMMAND
+	}
+	if strings.HasPrefix(cmd, "@") {
+		return A_COMMAND
+	}
+	return C_COMMAND
+}
