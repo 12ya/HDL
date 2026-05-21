@@ -107,3 +107,11 @@ func dest(cmd string) string {
 	}
 	return ""
 }
+
+func jump(cmd string) string {
+	if _, j, found := strings.Cut(cmd, ";"); found {
+		return j
+	}
+
+	return ""
+}
