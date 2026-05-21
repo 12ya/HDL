@@ -117,7 +117,10 @@ func jump(cmd string) string {
 }
 
 func comp(cmd string) string {
-	_, after, _ := strings.Cut(cmd, "=")
-	before, _, _ := strings.Cut(after, ";")
+	before, _, _ := strings.Cut(cmd, ";")
+	if _, after, found := strings.Cut(before, "="); found {
+		return after
+	}
+
 	return before
 }
