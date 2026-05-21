@@ -115,3 +115,9 @@ func jump(cmd string) string {
 
 	return ""
 }
+
+func comp(cmd string) string {
+	_, after, _ := strings.Cut(cmd, "=")
+	before, _, _ := strings.Cut(after, ";")
+	return before
+}
